@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    <context:component-scan base-package="ru.spring.training"/>-->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="TestBean"
+          class="ru.spring.training.TestBean">
+        <constructor-arg value="Vladislav"/>
+    </bean>
+
+
+
+<!--
+    <bean id="MusicBean"
+          class = "ru.spring.training.ClassicalMusic">
+    </bean>
+-->
+<!--
+    <bean id="MusicPlayer"
+          class = "ru.spring.training.MusicPlayer">
+        <property name="music" ref ="MusicBean"/>
+
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume }"/>
+    </bean>
+-->
+    <!-- <bean id="ClassicalMusicBean"
+        class="ru.spring.training.ClassicalMusic"
+         scope="prototype"
+         init-method="doMyInit"
+         destroy-method="doMyDestroy"
+        factory-method="getClassicalMusic">
+    </bean>
+    -->
+    <!--
+    <bean id="RockMusicBean"
+          class="ru.spring.training.RockMusic">
+    </bean>
+
+    <bean id="PopMusicBean"
+          class="ru.spring.training.PopMusic">
+    </bean>
+
+    <bean id="MusicPlayer"
+        class="ru.spring.training.MusicPlayer"
+        scope="prototype">
+        <property name="musicList">
+            <list>
+                <ref bean="ClassicalMusicBean"/>
+                <ref bean="RockMusicBean"/>
+                <ref bean="PopMusicBean"/>
+            </list>
+        </property>
+    </bean>
+-->
+
+</beans>
